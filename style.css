@@ -1,66 +1,117 @@
 body {
-  background: white;
-  font-family: Arial;
+    background-color: #f0f0f0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(3, 260px);
-  gap: 20px;
-  justify-content: center;
-  margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
 }
 
-.box {
-  width: 260px;
-  height: 180px;
-  background-size: cover;
-  background-position: center;
+.project-card {
+    background: white;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-/* 🐧 ONLY oval */
-.penguins {
-  background-image: url("penguins.jpg");
-  border-radius: 50% / 40%;
+/* 1. Penguins - Еліптична рамка */
+.penguin-frame img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%; /* Створює овал */
+    border: 5px solid #ccc;
 }
 
-/* 🦋 ONLY oval */
-.butterfly {
-  background-image: url("butterfly.jpg");
-  border-radius: 50% / 40%;
+/* 2. Football & Tic-Tac-Toe - Накладання фонів */
+.football-container {
+    position: relative;
+    width: 250px;
+    height: 180px;
+    border: 2px solid #000;
 }
 
-/* 🦖 normal */
-.dinosaur {
-  background-image: url("dinosaur.png");
+.football-bg {
+    width: 100%;
+    height: 100%;
+    background: url('football_field.jpg') center/cover;
+    filter: brightness(0.7);
 }
 
-/* 🐦 normal */
-.seagull {
-  background-image: url("seagull.jpg");
+.tic-tac-toe-border {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('tic-tac-toe.png');
+    background-size: 40px; /* Створює ефект рамки з іконок */
+    pointer-events: none;
 }
 
-/* 🎭 normal */
-.theatre {
-  background-image: url("theatre_stage.jpg");
+/* 3. Dinosaur - Тінь та зміна кольору */
+.dino-container {
+    background-color: #7a86b8;
+    padding: 20px;
 }
 
-/* ⚽ FOOTBALL (FIXED) */
-.football {
-  position: relative;
-  background-image: url("football_field.jpg");
+.dino-image {
+    width: 150px;
+    /* Фільтр робить динозавра синюватим і додає тінь */
+    filter: sepia(1) hue-rotate(200deg) saturate(2) drop-shadow(10px 10px 5px rgba(0,0,0,0.5));
 }
 
-/* overlay grid properly */
-.football::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  height: 80%;
-  transform: translate(-50%, -50%);
-  background-image: url("tic-tac-toe.png");
-  background-size: contain;
-  background-repeat: no-repeat;
+/* 4. Seagull - Градієнтний фон */
+.seagull-container {
+    width: 250px;
+    height: 180px;
+    background: linear-gradient(to bottom, #87ceeb, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seagull-container img {
+    width: 100%;
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+}
+
+/* 5. Butterfly - Інверсія та обрізка (Clip-path) */
+.butterfly-container img {
+    width: 250px;
+    filter: invert(1) hue-rotate(180deg);
+    /* Створення фігурної рамки */
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 20%);
+    border-radius: 20px;
+}
+
+/* 6. Theater - Текст поверх зображення */
+.theater-container {
+    position: relative;
+    width: 250px;
+}
+
+.theater-container img {
+    width: 100%;
+    display: block;
+    filter: brightness(0.6);
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
