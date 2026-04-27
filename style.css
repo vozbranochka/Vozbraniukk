@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  gap: 20px;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.card {
+  width: 250px;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Images */
+.penguins {
+  background-image: url("penguins.jpg");
+  border-radius: 50%;
+}
+
+.dinosaur {
+  background-image: url("dinosaur.png");
+}
+
+.bird {
+  background-image: url("bird.jpg");
+}
+
+.butterfly {
+  background-image: url("butterfly.jpg");
+  border-radius: 50%;
+}
+
+.presenting {
+  background-image: url("presenting.jpg");
+}
+
+/* Football field overlay */
+.football {
+  background-image: url("football_field.jpg");
+}
+
+.football::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("tic-tac-toe.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+}
