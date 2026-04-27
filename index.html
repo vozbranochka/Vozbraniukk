@@ -1,44 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>CSS Assignment - 3x2 Grid</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
 
-    <div class="main-layout">
-        <div class="project-item">
-            <div class="oval-wrap">
-                <img src="penguins.jpg" alt="Penguins">
-            </div>
-        </div>
+/* 3 Columns wide, 2 Rows deep */
+.main-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 300px); 
+    grid-template-rows: repeat(2, 220px);
+    gap: 15px;
+}
 
-        <div class="project-item">
-            <div class="football-frame">
-                <img src="football_field.jpg" alt="Field">
-            </div>
-        </div>
+.project-item {
+    background-color: white;
+    border: 1px solid #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
 
-        <div class="project-item dino-bg">
-            <img src="dinosaur.png" class="dino-effect" alt="Dino">
-        </div>
+/* 1. Penguins - Perfect Oval */
+.oval-wrap img {
+    width: 260px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #777;
+}
 
-        <div class="project-item seagull-bg">
-            <img src="seagull.png" class="seagull-effect" alt="Seagull">
-        </div>
+/* 2. Football Field - Tiled tic-tac-toe border */
+.football-frame {
+    padding: 15px;
+    background-image: url('tic-tac-toe.png');
+    background-size: 35px;
+    background-repeat: repeat;
+    border: 1px solid #777;
+}
+.football-frame img {
+    width: 220px;
+    display: block;
+}
 
-        <div class="project-item">
-            <img src="butterfly.jpg" class="butterfly-effect" alt="Butterfly">
-        </div>
+/* 3. Dinosaur - Proper Blue Tint and Sharp Shadow */
+.dino-bg { background-color: #5d6da3; }
+.dino-effect {
+    width: 180px;
+    filter: grayscale(1) brightness(1.2) sepia(1) hue-rotate(190deg) saturate(5) drop-shadow(10px 10px 0px rgba(0,0,0,0.3));
+}
 
-        <div class="project-item">
-            <div class="theater-wrap">
-                <img src="theater_stage.jpg" alt="Theater">
-                <div class="theater-label">Presenting</div>
-            </div>
-        </div>
-    </div>
+/* 4. Seagull - Sky Gradient */
+.seagull-bg { background: linear-gradient(to bottom, #8fa7e4, #ffffff); width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
+.seagull-effect { width: 250px; filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2)); }
 
-</body>
-</html>
+/* 5. Butterfly - Inverted colors & Top-Left Corner only */
+.butterfly-effect {
+    width: 280px;
+    height: 180px;
+    object-fit: cover;
+    filter: invert(1) hue-rotate(180deg);
+    border-radius: 60px 0 0 0; /* Exactly like the screenshot */
+}
+
+/* 6. Theater - Dark with centered text */
+.theater-wrap { position: relative; width: 100%; height: 100%; }
+.theater-wrap img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); }
+.theater-label {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
