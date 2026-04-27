@@ -1,105 +1,97 @@
-/* Layout Setup */
 body {
-    background-color: #e0e0e0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    background-color: #f0f0f0;
     margin: 0;
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 320px);
-    gap: 20px;
-}
-
-.card {
-    background-color: #ffffff;
-    border: 1px solid #bcbcbc;
-    padding: 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 220px;
-    position: relative;
+    padding: 20px;
 }
 
-/* 1. Penguins - Perfect Oval */
-.oval-container img {
-    width: 280px;
-    height: 180px;
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 15px;
+}
+
+.box {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* 1. Penguins - Oval with border */
+.penguins {
+    width: 260px;
+    height: 170px;
     object-fit: cover;
     border-radius: 50%;
-    border: 1px solid #888;
+    border: 1px solid #777;
 }
 
-/* 2. Football - Image Border using tic-tac-toe.png */
-.football-border {
-    padding: 15px;
+/* 2. Football - Border Image Technique */
+.football-container {
+    padding: 12px;
     background-image: url('tic-tac-toe.png');
-    background-size: 35px;
+    background-size: 30px;
     background-repeat: repeat;
-    display: flex;
+    border: 1px solid #999;
 }
-
-.field-img {
+.football-container img {
     width: 220px;
-    height: auto;
-    filter: brightness(0.9);
+    display: block;
 }
 
-/* 3. Dinosaur - Specific Blue Tint and Drop Shadow */
-.dino-background {
-    background-color: #5d6da3; /* Matches the sample background color */
+/* 3. Dinosaur - Accurate Blue Tint */
+.dino-box {
+    background-color: #5c75b3; /* Specific blue from image */
 }
-
-.dino-filter {
+.dino {
     width: 180px;
-    /* Turns green to blue and adds sharp shadow */
-    filter: hue-rotate(160deg) saturate(1.5) brightness(1.1) drop-shadow(12px 12px 5px rgba(0,0,0,0.4));
+    /* This stack: removes green, tints blue, adds shadow */
+    filter: grayscale(1) brightness(1.2) sepia(1) hue-rotate(195deg) saturate(4) drop-shadow(12px 12px 0px rgba(0,0,0,0.3));
 }
 
-/* 4. Seagull - Linear Sky Gradient */
-.seagull-background {
-    background: linear-gradient(to bottom, #8fa7e4 0%, #ffffff 100%);
+/* 4. Seagull - Sky Gradient */
+.seagull-box {
+    background: linear-gradient(to bottom, #8ba8e6 0%, #ffffff 100%);
 }
-
-.seagull-shadow {
+.seagull {
     width: 260px;
-    filter: drop-shadow(0px 8px 4px rgba(0,0,0,0.2));
+    filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.2));
 }
 
-/* 5. Butterfly - Top-Left Rounded and Color Inversion */
-.butterfly-style {
+/* 5. Butterfly - Inversion and Custom Corner */
+.butterfly {
     width: 280px;
     height: 180px;
     object-fit: cover;
-    /* Inverts colors to blue/white and rounds only the top-left corner */
-    filter: invert(1) hue-rotate(180deg) brightness(1.1);
-    border-radius: 60px 0 0 0;
+    filter: invert(1) hue-rotate(180deg);
+    /* Creates the sharp cut-off on the top-left */
+    clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 20%);
+    border-radius: 5px;
 }
 
-/* 6. Theater - Overlay Text */
+/* 6. Theater - Professional Overlay */
 .theater-container {
     position: relative;
     width: 100%;
 }
-
 .theater-container img {
     width: 100%;
-    display: block;
-    filter: brightness(0.4); /* Darkens the stage for the text */
+    filter: brightness(0.4);
 }
-
-.theater-text {
+.overlay {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    font-size: 24px;
-    letter-spacing: 1px;
-    pointer-events: none;
+    color: white;
+    font-family: sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 2px;
 }
