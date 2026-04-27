@@ -6,7 +6,6 @@ body {
     margin: 0;
 }
 
-/* 2 columns and 3 rows layout - exactly like the image */
 .main-container {
     display: grid;
     grid-template-columns: repeat(2, 400px);
@@ -31,22 +30,26 @@ body {
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid #a0a0a0;
+  -webkit-filter: sepia(100%);
+  filter: sepia(100%);
 }
 
 /* 2. Football Field - Tiled tic-tac-toe border */
 .football-border {
-    padding: 20px;
+    padding:5px;
     background-image: url('tic-tac-toe.png');
     background-size: 40px;
     background-repeat: repeat;
     border: 1px solid #000;
+    -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 .football-border img {
     width: 280px;
     display: block;
 }
 
-/* 3. Dinosaur - Blue tint and Drop Shadow */
+/* 3. Dinosaur */
 .dino-bg {
     background-color: #5c71b5; /* Accurate background blue */
 }
