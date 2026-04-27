@@ -1,22 +1,23 @@
 body {
-    background-color: #f4f4f4;
-    margin: 0;
+    background-color: #d1d5db;
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
-/* 3 Columns wide, 2 Rows deep */
-.main-layout {
+/* 3 columns across, 2 rows down - EXACTLY like the image */
+.gallery-container {
     display: grid;
-    grid-template-columns: repeat(3, 300px); 
-    grid-template-rows: repeat(2, 220px);
-    gap: 15px;
+    grid-template-columns: repeat(3, 350px); 
+    grid-template-rows: repeat(2, 250px);
+    gap: 10px;
 }
 
-.project-item {
-    background-color: white;
-    border: 1px solid #999;
+.project-card {
+    background-color: #f3f4f6;
+    border: 1px solid #9ca3af;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,57 +25,85 @@ body {
     position: relative;
 }
 
-/* 1. Penguins - Perfect Oval */
-.oval-wrap img {
-    width: 260px;
-    height: 170px;
+/* 1. Penguins - Perfect Oval with thin border */
+.penguin-frame img {
+    width: 300px;
+    height: 190px;
     object-fit: cover;
     border-radius: 50%;
-    border: 1px solid #777;
+    border: 1px solid #4b5563;
 }
 
-/* 2. Football Field - Tiled tic-tac-toe border */
-.football-frame {
-    padding: 15px;
+/* 2. Football Field - Using tic-tac-toe.png as a repeating border */
+.football-outer {
     background-image: url('tic-tac-toe.png');
     background-size: 35px;
     background-repeat: repeat;
-    border: 1px solid #777;
+    padding: 20px;
+    border: 1px solid #000;
 }
-.football-frame img {
-    width: 220px;
+.football-inner img {
+    width: 240px;
     display: block;
+    filter: brightness(0.8) contrast(1.1);
 }
 
-/* 3. Dinosaur - Proper Blue Tint and Sharp Shadow */
-.dino-bg { background-color: #5d6da3; }
-.dino-effect {
-    width: 180px;
-    filter: grayscale(1) brightness(1.2) sepia(1) hue-rotate(190deg) saturate(5) drop-shadow(10px 10px 0px rgba(0,0,0,0.3));
+/* 3. Dinosaur - Dark blue box and Blue dinosaur */
+.dino-box {
+    background-color: #5c71b5; 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dino-img {
+    width: 200px;
+    /* This changes green to blue and adds shadow */
+    filter: hue-rotate(180deg) saturate(2) drop-shadow(10px 10px 5px rgba(0,0,0,0.5));
 }
 
-/* 4. Seagull - Sky Gradient */
-.seagull-bg { background: linear-gradient(to bottom, #8fa7e4, #ffffff); width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
-.seagull-effect { width: 250px; filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2)); }
-
-/* 5. Butterfly - Inverted colors & Top-Left Corner only */
-.butterfly-effect {
-    width: 280px;
-    height: 180px;
-    object-fit: cover;
-    filter: invert(1) hue-rotate(180deg);
-    border-radius: 60px 0 0 0; /* Exactly like the screenshot */
+/* 4. Seagull - Sky Gradient and shadow */
+.seagull-box {
+    background: linear-gradient(to bottom, #8fa7e4 0%, #ffffff 100%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.seagull-img {
+    width: 100%;
+    filter: drop-shadow(0 8px 4px rgba(0,0,0,0.2));
 }
 
-/* 6. Theater - Dark with centered text */
-.theater-wrap { position: relative; width: 100%; height: 100%; }
-.theater-wrap img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); }
-.theater-label {
+/* 5. Butterfly - Top-left and Bottom-right rounded, Inverted colors */
+.butterfly-wrap {
+    overflow: hidden;
+    /* Rounds specific corners like in the screenshot */
+    border-radius: 80px 0 80px 0; 
+}
+.butterfly-img {
+    width: 320px;
+    display: block;
+    filter: invert(1) hue-rotate(180deg) brightness(1.2);
+}
+
+/* 6. Theater - Dark stage with centered text */
+.theater-wrap {
+    position: relative;
+    width: 100%;
+}
+.theater-wrap img {
+    width: 100%;
+    filter: brightness(0.4);
+}
+.presenting-text {
     position: absolute;
-    top: 50%; left: 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: #fff;
     font-family: Arial, sans-serif;
-    font-size: 28px;
-    letter-spacing: 2px;
+    font-size: 26px;
+    letter-spacing: 1px;
 }
