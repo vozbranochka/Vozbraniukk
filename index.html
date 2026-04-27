@@ -1,52 +1,42 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Image Manipulation Assignment</title>
+    <title>CSS Image Manipulation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <div class="project-card">
-            <div class="penguin-frame">
-                <img src="penguins.jpg" alt="Penguins">
-            </div>
-        </div>
+<div class="gallery">
+    <div class="box">
+        <img src="penguins.jpg" class="penguins" alt="Penguins">
+    </div>
 
-        <div class="project-card">
-            <div class="football-container">
-                <div class="football-bg"></div>
-                <div class="tic-tac-toe-border"></div>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="dino-container">
-                <img src="dinosaur.png" alt="Dinosaur" class="dino-image">
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="seagull-container">
-                <img src="seagull.png" alt="Seagull">
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="butterfly-container">
-                <img src="butterfly.jpg" alt="Butterfly">
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="theater-container">
-                <img src="theater_stage.jpg" alt="Theater">
-                <div class="overlay-text">Presenting</div>
-            </div>
+    <div class="box">
+        <div class="football-container">
+            <img src="football_field.jpg" alt="Football Field">
         </div>
     </div>
+
+    <div class="box dino-box">
+        <img src="dinosaur.png" class="dino" alt="Dinosaur">
+    </div>
+
+    <div class="box seagull-box">
+        <img src="seagull.png" class="seagull" alt="Seagull">
+    </div>
+
+    <div class="box">
+        <img src="butterfly.jpg" class="butterfly" alt="Butterfly">
+    </div>
+
+    <div class="box">
+        <div class="theater-container">
+            <img src="theater_stage.jpg" alt="Theater Stage">
+            <div class="overlay">Presenting</div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
