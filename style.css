@@ -1,23 +1,22 @@
 body {
-    background-color: #d1d5db;
+    background-color: #f0f0f0;
+    margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
+    padding-top: 50px;
 }
 
-/* 3 columns across, 2 rows down */
-.gallery-container {
+/* 3 Columns across, 2 Rows down */
+.main-layout {
     display: grid;
-    grid-template-columns: repeat(3, 350px); 
-    grid-template-rows: repeat(2, 250px);
-    gap: 10px;
+    grid-template-columns: repeat(3, 300px); 
+    grid-template-rows: repeat(2, 220px);
+    gap: 15px;
 }
 
-.project-card {
-    background-color: #f3f4f6;
-    border: 1px solid #9ca3af;
+.project-item {
+    background-color: white; /* White background for most boxes */
+    border: 1px solid #999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,86 +24,87 @@ body {
     position: relative;
 }
 
-/* 1. Penguins - Perfect Oval with thin border */
-.penguin-frame img {
-    width: 300px;
-    height: 190px;
+/* 1. Penguins - Oval with a slight yellow tint */
+.oval-wrap img {
+    width: 260px;
+    height: 170px;
     object-fit: cover;
     border-radius: 50%;
-    border: 1px solid #4b5563;
-      -webkit-filter: sepia(100%);
-  filter: sepia(100%);
-    
+    border: 1px solid #777;
+    /* Light yellow tint effect */
+    filter: sepia(0.3) brightness(1.1) saturate(1.2);
 }
 
-/* 2. Football Field - Using tic-tac-toe.png as a repeating border */
-.football-outer {
+/* 2. Football Field - Tiled tic-tac-toe border */
+.football-frame {
+    padding: 15px;
     background-image: url('tic-tac-toe.png');
     background-size: 35px;
     background-repeat: repeat;
-    padding: 20px;
-    border: 1px solid #000;
+    border: 1px solid #777;
 }
-.football-inner img {
-    width: 240px;
+.football-frame img {
+    width: 220px;
     display: block;
-    filter: brightness(0.8) contrast(1.1);
 }
 
-/* 3. Dinosaur */
-.dino-box {
-    background-color: white ; 
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* 3. Dinosaur - White background, Blue dinosaur body */
+.dino-item {
+    background-color: #ffffff; /* White background as requested */
 }
-.dino-img {
-    width: 200px;
-    filter: hue-rotate(180deg) saturate(2) drop-shadow(10px 10px 5px rgba(0,0,0,0.5));
+.dino-effect {
+    width: 180px;
+    /* Creating a blue/cyan color from the green source */
+    filter: hue-rotate(170deg) saturate(3) brightness(1) drop-shadow(10px 10px 0px rgba(0,0,0,0.2));
 }
 
-/* 4. Seagull - Sky Gradient and shadow */
-.seagull-box {
-    background: linear-gradient(to bottom, #8fa7e4 0%, #ffffff 100%);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
+/* 4. Seagull - Sky Gradient */
+.seagull-bg { 
+    background: linear-gradient(to bottom, #8fa7e4, #ffffff); 
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
-.seagull-img {
-    width: 100%;
-    filter: drop-shadow(0 8px 4px rgba(0,0,0,0.2));
-}
-
-/* 5. Butterfly - Top-left and Bottom-right rounded, Inverted colors */
-.butterfly-wrap {
-    overflow: hidden;
-    /* Rounds specific corners like in the screenshot */
-    border-radius: 80px 0 80px 0; 
-}
-.butterfly-img {
-    width: 320px;
-    display: block;
-    filter: invert(1) hue-rotate(180deg) brightness(1.2);
+.seagull-effect { 
+    width: 250px; 
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2)); 
 }
 
-/* 6. Theater - Dark stage with centered text */
-.theater-wrap {
-    position: relative;
-    width: 100%;
+/* 5. Butterfly - Inverted colors & Top-Left Corner */
+.butterfly-effect {
+    width: 280px;
+    height: 180px;
+    object-fit: cover;
+    filter: invert(1) hue-rotate(180deg);
+    border-radius: 60px 0 0 0; 
 }
-.theater-wrap img {
-    width: 100%;
+
+/* 6. Theater - Black background with visible image and text */
+.theater-item {
+    background-color: #000000; /* Black background as requested */
 }
-.presenting-text {
+.theater-wrap { 
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
+}
+.theater-wrap img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    opacity: 0.7; /* Makes it slightly transparent to show black background */
+    filter: brightness(0.6); 
+}
+.theater-label {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
+    color: white;
     font-family: Arial, sans-serif;
-    font-size: 26px;
-    letter-spacing: 1px;
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
 }
