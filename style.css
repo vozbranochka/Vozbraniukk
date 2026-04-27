@@ -1,109 +1,105 @@
-/* Загальні налаштування сітки */
+/* Layout Setup */
 body {
-    background-color: #ddd;
-    display: flex;
-    justify-content: center;
-    padding: 50px;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 300px);
-    gap: 20px;
-}
-
-.box {
-    background: #fff;
-    padding: 10px;
-    border: 1px solid #bbb;
+    background-color: #e0e0e0;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 320px);
+    gap: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #bcbcbc;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
     position: relative;
 }
 
-/* 1. ПІНГВІНИ: Чіткий еліпс та рамка */
-.img-penguins {
+/* 1. Penguins - Perfect Oval */
+.oval-container img {
     width: 280px;
     height: 180px;
     object-fit: cover;
     border-radius: 50%;
     border: 1px solid #888;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
 }
 
-/* 2. ФУТБОЛЬНЕ ПОЛЕ: Рамка через border-image */
-.football-frame {
-    padding: 25px; /* Місце для "рамки" */
+/* 2. Football - Image Border using tic-tac-toe.png */
+.football-border {
+    padding: 15px;
     background-image: url('tic-tac-toe.png');
-    background-size: 30px; /* Розмір маленьких іконок */
+    background-size: 35px;
     background-repeat: repeat;
+    display: flex;
 }
 
-.img-football {
+.field-img {
     width: 220px;
-    display: block;
-    filter: brightness(0.8) contrast(1.2);
+    height: auto;
+    filter: brightness(0.9);
 }
 
-/* 3. ДИНОЗАВР: Правильний відтінок (менше синього) */
-.dino-bg {
-    background-color: #5d6da3; /* Колір фону з твого скріншота */
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* 3. Dinosaur - Specific Blue Tint and Drop Shadow */
+.dino-background {
+    background-color: #5d6da3; /* Matches the sample background color */
 }
 
-.img-dino {
-    width: 200px;
-    /* Використовуємо sepia та hue-rotate для м'якого тонування */
-    filter: sepia(0.5) hue-rotate(180deg) brightness(1.1) drop-shadow(15px 15px 5px rgba(0,0,0,0.4));
+.dino-filter {
+    width: 180px;
+    /* Turns green to blue and adds sharp shadow */
+    filter: hue-rotate(160deg) saturate(1.5) brightness(1.1) drop-shadow(12px 12px 5px rgba(0,0,0,0.4));
 }
 
-/* 4. ЧАЙКА: Плавний градієнт */
-.seagull-bg {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, #a1b0e0 0%, #ffffff 100%);
-    display: flex;
-    align-items: center;
+/* 4. Seagull - Linear Sky Gradient */
+.seagull-background {
+    background: linear-gradient(to bottom, #8fa7e4 0%, #ffffff 100%);
 }
 
-.img-seagull {
-    width: 100%;
-    filter: drop-shadow(2px 5px 3px rgba(0,0,0,0.3));
+.seagull-shadow {
+    width: 260px;
+    filter: drop-shadow(0px 8px 4px rgba(0,0,0,0.2));
 }
 
-/* 5. МЕТЕЛИК: Складна обрізка (Top-Left Corner) */
-.img-butterfly {
+/* 5. Butterfly - Top-Left Rounded and Color Inversion */
+.butterfly-style {
     width: 280px;
-    /* Інверсія кольорів + синій відтінок */
-    filter: invert(0.9) hue-rotate(190deg) saturate(1.5);
-    /* Створюємо ефект закругленого кута з одного боку */
-    border-radius: 60px 0 0 0; 
+    height: 180px;
     object-fit: cover;
+    /* Inverts colors to blue/white and rounds only the top-left corner */
+    filter: invert(1) hue-rotate(180deg) brightness(1.1);
+    border-radius: 60px 0 0 0;
 }
 
-/* 6. ТЕАТР: Текст і тінь */
-.theater-stage {
+/* 6. Theater - Overlay Text */
+.theater-container {
     position: relative;
     width: 100%;
 }
 
-.img-theater {
+.theater-container img {
     width: 100%;
-    filter: brightness(0.5);
+    display: block;
+    filter: brightness(0.4); /* Darkens the stage for the text */
 }
 
-.text-presenting {
+.theater-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
+    color: #ffffff;
     font-family: Arial, sans-serif;
-    font-size: 28px;
-    opacity: 0.8;
+    font-size: 24px;
+    letter-spacing: 1px;
+    pointer-events: none;
 }
