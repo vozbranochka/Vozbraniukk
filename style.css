@@ -1,110 +1,107 @@
 body {
-    background-color: #f0f0f0;
+    background-color: #d1d5db; /* Сірий фон сторінки як на фото */
     margin: 0;
     display: flex;
     justify-content: center;
     padding-top: 50px;
+    font-family: sans-serif;
 }
 
-/* 3 columns across, 2 rows down */
 .main-layout {
     display: grid;
-    grid-template-columns: repeat(3, 300px); 
-    grid-template-rows: repeat(2, 220px);
-    gap: 15px;
+    grid-template-columns: repeat(3, 350px); 
+    grid-template-rows: repeat(2, 250px);
+    gap: 20px;
 }
 
 .project-item {
     background-color: white;
-    border: 1px solid #999;
+    border: 1px solid #aaa;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     position: relative;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
-/* 1. Penguins - Oval with light yellow tint */
+/* 1. ПІНГВІНИ - Овал без зайвих фільтрів */
 .oval-wrap img {
-    width: 260px;
-    height: 170px;
+    width: 300px;
+    height: 200px;
     object-fit: cover;
     border-radius: 50%;
-    border: 1px solid #777;
-    /* Yellowish tint effect */
-    filter: sepia(0.3) brightness(1.05) saturate(1.2);
+    border: 1px solid #666;
+    filter: brightness(1.05); /* Просто легка яскравість */
 }
 
-/* 2. Football - Border using tic-tac-toe.png */
+/* 2. ФУТБОЛ - Використовуємо border-image (КРИТИЧНО) */
 .football-frame {
-    padding: 15px;
-    background-image: url('tic-tac-toe.png');
-    background-size: 35px;
-    background-repeat: repeat;
-    border: 1px solid #777;
+    width: 250px;
+    height: 150px;
+    border: 20px solid transparent;
+    /* Це зробить рамку точно як у завданні */
+    border-image: url('tic-tac-toe.png') 33% repeat;
 }
 .football-frame img {
-    width: 220px;
+    width: 100%;
+    height: 100%;
     display: block;
+    filter: brightness(0.8);
 }
 
-/* 3. Dinosaur - White background and Blue Dino */
+/* 3. ДИНОЗАВР - Темно-синій з жорсткою тінню */
 .dino-container {
-    background-color: #ffffff; /* Explicitly white */
+    background-color: white;
 }
 .dino-effect {
     width: 180px;
-    /* Shifts green to blue and adds a sharp shadow */
-    filter: hue-rotate(170deg) saturate(3) drop-shadow(10px 10px 0px rgba(0,0,0,0.2));
+    /* Перетворюємо зелений на темно-синій */
+    filter: hue-rotate(190deg) saturate(1.5) brightness(0.8) drop-shadow(15px 15px 0px #444);
 }
 
-/* 4. Seagull - Blue gradient background */
+/* 4. ЧАЙКА - Градієнт неба */
 .seagull-bg { 
-    background: linear-gradient(to bottom, #8fa7e4, #ffffff); 
+    background: linear-gradient(to bottom, #7395ef, #ffffff); 
     width: 100%; 
     height: 100%; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
 }
 .seagull-effect { 
-    width: 250px; 
-    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2)); 
+    width: 280px; 
+    filter: drop-shadow(0 10px 5px rgba(0,0,0,0.3)); 
 }
 
-/* 5. Butterfly - Inverted colors & Top-Left Corner */
+/* 5. МЕТЕЛИК - Синій неон та складна обрізка */
 .butterfly-effect {
-    width: 280px;
-    height: 180px;
+    width: 300px;
+    height: 200px;
     object-fit: cover;
-    filter: invert(1) hue-rotate(180deg);
-    border-radius: 60px 0 0 0; 
+    /* Специфічний фільтр для синього неону на темному фоні */
+    filter: invert(1) hue-rotate(180deg) brightness(1.2) saturate(1.5);
+    /* Обрізка: заокруглюємо тільки верхній лівий та нижній правий кути */
+    border-radius: 100px 0 100px 0; 
 }
 
-/* 6. Theater - Black background with text */
+/* 6. ТЕАТР - Напис Presenting */
 .theater-container {
-    background-color: #000000; /* Pure black background */
+    background-color: #1a1a1a;
 }
 .theater-wrap { 
-    position: relative; 
     width: 100%; 
     height: 100%; 
 }
 .theater-wrap img { 
     width: 100%; 
     height: 100%; 
-    object-fit: cover; 
-    opacity: 0.6; /* Slight transparency to mix with black background */
+    object-fit: cover;
+    filter: brightness(0.4) contrast(1.2);
 }
 .theater-label {
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 28px;
-    letter-spacing: 2px;
-    text-align: center;
-    width: 100%;
-    pointer-events: none;
+    color: #eee;
+    font-size: 32px;
+    font-weight: 100; /* Тонкий шрифт як на зразку */
+    letter-spacing: 1px;
 }
