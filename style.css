@@ -3,18 +3,17 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    padding: 70px 30px; /* більше простору = менше обрізання */
+    padding: 80px 40px; /* більше простору → нема обрізання */
     font-family: sans-serif;
     box-sizing: border-box;
 }
 
-/* сітка */
 .main-layout {
     display: grid;
     grid-template-columns: repeat(3, 350px); 
     grid-template-rows: repeat(2, 250px);
     gap: 20px;
-    padding: 20px; /* важливо для країв */
+    padding: 30px; /* ВАЖЛИВО для країв */
 }
 
 /* базові картки */
@@ -28,14 +27,15 @@ body {
     position: relative;
 }
 
-/* 1. ПІНГВІНИ (НІЖНИЙ ЖОВТИЙ ФОН ВНУТРІ) */
+/* 1. ПІНГВІНИ (ОВАЛ ПОВЕРНУТО) */
 .oval-wrap {
+    width: 320px;
+    height: 210px;
+    background-color: #f8f1c7; /* ніжний жовтий всередині */
     border-radius: 50%;
-    padding: 0; /* ❌ прибрано рамку */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f8f1c7; /* ніжний жовтий всередині */
 }
 
 .oval-wrap img {
@@ -43,7 +43,7 @@ body {
     height: 200px;
     object-fit: cover;
     border-radius: 50%;
-    border: none; /* ❌ прибрано рамку */
+    border: none;
     filter: sepia(0.3) brightness(1.1) saturate(1.1);
 }
 
@@ -63,11 +63,11 @@ body {
     filter: grayscale(1) brightness(0.7);
 }
 
-/* 3. ДИНОЗАВР (ЧІТКИЙ СИНІЙ) */
+/* 3. ДИНОЗАВР (ЧІТКИЙ СИНІЙ + ЧОРНА ТОНКА ТІНЬ) */
 .dino-effect {
     width: 180px;
     filter: hue-rotate(200deg) saturate(2.5) brightness(0.95)
-            drop-shadow(3px 3px 5px rgba(0,0,0,0.2));
+            drop-shadow(2px 2px 2px rgba(0,0,0,0.6));
 }
 
 /* 4. ЧАЙКА */
@@ -85,7 +85,7 @@ body {
     filter: drop-shadow(0 10px 5px rgba(0,0,0,0.3)); 
 }
 
-/* 5. МЕТЕЛИК (БЕЗ СІРОЇ РАМКИ) */
+/* 5. МЕТЕЛИК (НЕ ЧІПАЮ) */
 .project-item:nth-child(5) {
     background-color: white;
 }
