@@ -87,20 +87,19 @@ body {
     filter: drop-shadow(0 10px 5px rgba(0,0,0,0.3));
 }
 
-/* 🦋 BUTTERFLY (orange → blue correction) */
+/*  BUTTERFLY */
 .butterfly-effect {
     width: 95%;
     height: 95%;
     object-fit: cover;
+    
+    border-radius: 70px 0 70px 0;
 
-    border-radius: 60px;
-
-    /* 🔥 strong color shift orange → blue */
-    filter:
-        hue-rotate(200deg)
-        saturate(2)
+    filter: 
+        hue-rotate(180deg)
+        saturate(1.6)
         brightness(1.05)
-        contrast(1.2);
+        contrast(1.1);
 }
 
 /* THEATER */
