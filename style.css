@@ -30,6 +30,7 @@ body {
     overflow: hidden;
 }
 
+/* PENGUINS */
 .oval-wrap {
     width: 320px;
     height: 210px;
@@ -48,6 +49,7 @@ body {
     filter: sepia(0.25) brightness(1.05) saturate(1.1);
 }
 
+/* FOOTBALL */
 .football-frame {
     width: 250px;
     height: 150px;
@@ -63,12 +65,14 @@ body {
     filter: grayscale(1) brightness(0.7);
 }
 
+/* DINO */
 .dino-effect {
     width: 180px;
     filter: hue-rotate(200deg) saturate(2.2) brightness(0.85) contrast(1.15)
             drop-shadow(3px 3px 6px rgba(0,0,0,0.7));
 }
 
+/* SEAGULL */
 .seagull-bg {
     background: linear-gradient(to bottom, #7395ef, #ffffff);
     width: 100%;
@@ -83,14 +87,23 @@ body {
     filter: drop-shadow(0 10px 5px rgba(0,0,0,0.3));
 }
 
+/* 🦋 BUTTERFLY (orange → blue correction) */
 .butterfly-effect {
     width: 95%;
     height: 95%;
-    object-fit: contain;
-    border-radius: 140px 0 140px 0;
-    filter: invert(1) hue-rotate(180deg) brightness(1.1) saturate(1.6);
+    object-fit: cover;
+
+    border-radius: 60px;
+
+    /* 🔥 strong color shift orange → blue */
+    filter:
+        hue-rotate(200deg)
+        saturate(2)
+        brightness(1.05)
+        contrast(1.2);
 }
 
+/* THEATER */
 .theater-container {
     background-color: #000;
 }
