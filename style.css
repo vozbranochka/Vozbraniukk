@@ -24,40 +24,44 @@ body {
     position: relative;
 }
 
-/* 1. Пінгвіни - Овал як на зразку */
+/* 1. Penguins - RETURNED YELLOW TINT */
 .oval-wrap img {
     width: 300px;
     height: 190px;
     object-fit: cover;
     border-radius: 50%;
     border: 1px solid #777;
+    /* Повертаємо жовтуватий ефект */
+    filter: sepia(0.4) brightness(1.1) saturate(1.3);
 }
 
-/* 2. Футбол - Рамка через border-image */
+/* 2. Football - Grey Field, No Hearts */
 .football-frame {
-    width: 260px;
-    height: 160px;
-    border: 15px solid transparent;
-    /* Використовуємо картинку як рамку */
-    border-image: url('tic-tac-toe.png') 33.3% repeat;
+    width: 240px;
+    height: 150px;
+    border: 25px solid transparent;
+    border-image-source: url('tic-tac-toe.png');
+    border-image-slice: 33.3%;
+    border-image-repeat: round;
 }
 .football-frame img {
     width: 100%;
     height: 100%;
     display: block;
+    filter: grayscale(1) brightness(0.7);
 }
 
-/* 3. Динозавр - Синій колір + Жорстка тінь */
+/* 3. Dinosaur - Blue Tint and Hard Shadow */
 .dino-container {
     background-color: #ffffff;
 }
 .dino-effect {
     width: 180px;
-    /* hue-rotate(180deg) змінить зелений на синій */
-    filter: hue-rotate(180deg) saturate(2) drop-shadow(12px 12px 0px #444);
+    /* Hue-rotate 190-200 робить його синім */
+    filter: hue-rotate(195deg) saturate(2.5) brightness(0.9) drop-shadow(12px 12px 0px #444);
 }
 
-/* 4. Чайка - Градієнт */
+/* 4. Seagull */
 .seagull-bg { 
     background: linear-gradient(to bottom, #7395ef, #ffffff); 
     width: 100%; 
@@ -71,18 +75,17 @@ body {
     filter: drop-shadow(0 8px 5px rgba(0,0,0,0.3)); 
 }
 
-/* 5. Метелик - Синій неон + Форма пелюстки */
+/* 5. Butterfly - Petal Shape and Neon Blue */
 .butterfly-effect {
     width: 320px;
     height: 200px;
     object-fit: cover;
-    /* Робимо синім на темному фоні */
-    filter: invert(1) hue-rotate(180deg) brightness(1.1);
-    /* Заокруглюємо тільки два кути навхрест */
+    filter: invert(1) hue-rotate(185deg) brightness(1.1) saturate(1.8);
+    /* Заокруглення Top-Left та Bottom-Right для форми пелюстки */
     border-radius: 80px 0 80px 0; 
 }
 
-/* 6. Театр - Чорний фон та текст */
+/* 6. Theater */
 .theater-container {
     background-color: #000;
 }
@@ -95,7 +98,7 @@ body {
     width: 100%; 
     height: 100%; 
     object-fit: cover; 
-    opacity: 0.5; /* Щоб фон був чорним */
+    opacity: 0.5;
 }
 .theater-label {
     position: absolute;
@@ -105,6 +108,5 @@ body {
     font-size: 32px;
     font-weight: 100;
     letter-spacing: 2px;
-    width: 100%;
     text-align: center;
 }
