@@ -89,17 +89,17 @@ body {
 
 /*  BUTTERFLY */
 .butterfly-effect {
-    width: 95%;
-    height: 95%;
-    object-fit: cover;
-    
+    width: 90%;
+    height: 90%;
+
+    object-fit: contain; /* щоб не обрізало */
+
     border-radius: 70px 0 70px 0;
 
     filter: 
-        hue-rotate(180deg)
-        saturate(1.6)
-        brightness(1.05)
-        contrast(1.1);
+        hue-rotate(170deg)
+        saturate(1.4)
+        brightness(1.2);
 }
 
 /* THEATER */
