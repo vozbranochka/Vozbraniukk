@@ -1,22 +1,26 @@
 body {
     background-color: #d1d5db;
     margin: 0;
+    font-family: sans-serif;
+}
+
+/* 🔥 ФІКС: щоб нічого не обрізалось зліва */
+.page-wrapper {
+    width: 100%;
+    overflow-x: auto;
     display: flex;
     justify-content: center;
-    padding: 80px 20px;
-    font-family: sans-serif;
+    padding: 80px 40px;
     box-sizing: border-box;
 }
 
-/* головний layout */
+/* сітка */
 .main-layout {
     display: grid;
     grid-template-columns: repeat(3, 350px);
     grid-template-rows: repeat(2, 250px);
     gap: 20px;
-
     padding: 30px;
-    max-width: 1100px;
 }
 
 /* базові блоки */
@@ -27,29 +31,28 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    position: relative;
 }
 
-/* 🟡 ПІНГВІНИ (без жовтої смуги) */
+/* 🟡 ПІНГВІНИ (як ти хотіла: сірий + легкий жовтий фільтр) */
 .oval-wrap {
     width: 320px;
     height: 210px;
     border-radius: 50%;
+    border: 1px solid #bdbdbd;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
-    border: 1px solid #bdbdbd;
-    background: transparent;
+    overflow: hidden;
 }
 
 .oval-wrap img {
-    width: 300px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 50%;
-    filter: sepia(0.15) brightness(1.05) saturate(1.05);
+
+    /* 🔥 ЛЕГКИЙ ЖОВТИЙ ФІЛЬТР */
+    filter: sepia(0.25) brightness(1.05) saturate(1.1);
 }
 
 /* ⚽ ФУТБОЛ */
@@ -68,64 +71,64 @@ body {
     filter: grayscale(1) brightness(0.7);
 }
 
-/* 🟦 ДИНОЗАВР (реально синій) */
+/* 🟦 ДИНОЗАВР (ЧИСТО СИНІЙ, без рожевого) */
 .dino-effect {
     width: 180px;
 
     filter: 
-        hue-rotate(210deg)
-        saturate(3)
-        brightness(0.8)
-        contrast(1.2)
-        drop-shadow(3px 3px 5px rgba(0,0,0,0.65));
+        hue-rotate(200deg)
+        saturate(2.2)
+        brightness(0.85)
+        contrast(1.15)
+        drop-shadow(3px 3px 6px rgba(0,0,0,0.7));
 }
 
 /* 🕊 ЧАЙКА */
-.seagull-bg { 
-    background: linear-gradient(to bottom, #7395ef, #ffffff); 
-    width: 100%; 
-    height: 100%; 
-    display: flex; 
-    justify-content: center; 
+.seagull-bg {
+    background: linear-gradient(to bottom, #7395ef, #ffffff);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.seagull-effect { 
-    width: 280px; 
-    filter: drop-shadow(0 10px 5px rgba(0,0,0,0.3)); 
+.seagull-effect {
+    width: 280px;
+    filter: drop-shadow(0 10px 5px rgba(0,0,0,0.3));
 }
 
-/* 🦋 МЕТЕЛИК */
+/* 🦋 МЕТЕЛИК (ВИПРАВЛЕНО: НЕ Обрізається) */
 .butterfly-effect {
-    width: 90%;
-    height: 90%;
-    object-fit: cover;
-    border-radius: 80px 0 80px 0;
+    width: 95%;
+    height: 95%;
+    object-fit: contain; /* 🔥 головна фіксація */
 
+    border-radius: 80px 0 80px 0;
     filter: invert(1) hue-rotate(180deg) brightness(1.1) saturate(1.6);
 }
 
 /* 🎭 ТЕАТР */
-.theater-container { 
-    background-color: #000; 
+.theater-container {
+    background-color: #000;
 }
 
-.theater-wrap { 
-    position: relative; 
-    width: 100%; 
-    height: 100%; 
+.theater-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
-.theater-wrap img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
+.theater-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     opacity: 0.5;
 }
 
 .theater-label {
     position: absolute;
-    top: 50%; 
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
