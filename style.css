@@ -1,32 +1,95 @@
-/* 1. ПІНГВІНИ - Тепер жовтуватий і овал, і фон навколо нього */
-.project-item:has(.oval-wrap) {
-    background-color: #fdf5e6; /* Кремовий фон для всього квадрата */
+/* Базові налаштування */
+body {
+    background-color: #d1d5db;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
 }
+
+/* Адаптивна сітка */
+.main-layout {
+    display: grid;
+    /* На планшеті блоки будуть один під одним або по 2, на ПК — по 3 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.project-item {
+    background-color: white;
+    border: 1px solid #999;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 1. ПІНГВІНИ — Жовтуватий фон і овал */
+.project-item.penguins { background-color: #fcf9e8; }
 .oval-wrap img {
-    width: 300px;
-    height: 200px;
+    width: 280px;
+    height: 180px;
     object-fit: cover;
     border-radius: 50%;
     border: 1px solid #777;
-    /* Посилюємо сепію для жовтуватого ефекту */
-    filter: sepia(0.6) brightness(1.1);
+    filter: sepia(0.4) brightness(1.1);
 }
 
-/* 3. ДИНОЗАВР - Робимо СИНІМ та зменшуємо тінь */
+/* 2. ФУТБОЛ — Сіре поле та рамка */
+.football-frame {
+    width: 80%;
+    height: 70%;
+    border: 18px solid transparent;
+    border-image: url('tic-tac-toe.png') 33% round;
+}
+.football-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1) brightness(0.7);
+}
+
+/* 3. ДИНОЗАВР — СИНІЙ з маленькою тінню */
 .dino-effect {
-    width: 180px;
-    /* hue-rotate(150deg) зробить його синім, а не рожевим */
-    /* drop-shadow робимо меншим (5px замість 15px) та напівпрозорим */
-    filter: hue-rotate(150deg) saturate(1.5) drop-shadow(5px 5px 3px rgba(0,0,0,0.5));
+    height: 80%;
+    /* 180-200deg дає чистий синій колір */
+    filter: hue-rotate(190deg) saturate(1.5) drop-shadow(4px 4px 3px rgba(0,0,0,0.4));
 }
 
-/* 5. МЕТЕЛИК - Виправляємо колір на глибокий синій неон */
+/* 4. ЧАЙКА — Градієнт */
+.project-item.seagull {
+    background: linear-gradient(to bottom, #7395ef, #ffffff);
+}
+.seagull-effect {
+    width: 80%;
+    filter: drop-shadow(0 10px 5px rgba(0,0,0,0.3));
+}
+
+/* 5. МЕТЕЛИК — СИНІЙ НЕОН + форма пелюстки */
 .butterfly-effect {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* invert(1) робить кольори протилежними, hue-rotate(180) повертає їх у синю гаму */
-    filter: invert(1) hue-rotate(180deg) brightness(1.1) saturate(2);
-    /* Форма пелюстки (заокруглення зверху-зліва та знизу-справа) */
-    border-radius: 80px 0 80px 0; 
+    /* invert + hue-rotate створює синій неон */
+    filter: invert(1) hue-rotate(180deg) saturate(2) brightness(1.1);
+    /* Заокруглення зверху-ліво та знизу-право */
+    border-radius: 80px 0 80px 0;
+}
+
+/* 6. ТЕАТР */
+.project-item.theater { background-color: black; }
+.theater-wrap { width: 100%; height: 100%; position: relative; }
+.theater-wrap img { width: 100%; height: 100%; object-fit: cover; opacity: 0.4; }
+.theater-label {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 28px;
+    letter-spacing: 2px;
 }
