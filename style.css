@@ -97,8 +97,9 @@ body {
     width: 90%;
     height: 90%;
 
-    border-top-left-radius: 80px;
-    border-bottom-right-radius: 80px;
+    border-top-left-radius: 120px;
+    border-bottom-right-radius: 120px;
+
     border-top-right-radius: 0;
     border-bottom-left-radius: 0;
 
