@@ -96,23 +96,31 @@ body {
 .butterfly-wrap {
     width: 90%;
     height: 90%;
-    border-radius: 150px;
+
+    border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+
     background: white;
+    padding: 10px;
 }
 
 .butterfly-effect {
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 
     filter: 
-        hue-rotate(170deg)
-        brightness(1.2)
-        saturate(1.2);
+        brightness(1.5)
+        contrast(0.8)
+        saturate(1.3)
+        hue-rotate(170deg);
 }
 
 /* THEATER */
