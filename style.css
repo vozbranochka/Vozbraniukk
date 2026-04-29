@@ -68,8 +68,14 @@ body {
 /* DINO */
 .dino-effect {
     width: 180px;
-    filter: hue-rotate(140deg) saturate(1.6) brightness(0.9) contrast(1.1)
-            drop-shadow(3px 3px 6px rgba(0,0,0,0.7));
+
+    filter: 
+        sepia(1)
+        hue-rotate(180deg)
+        saturate(3)
+        brightness(0.9)
+        contrast(1.1)
+        drop-shadow(3px 3px 6px rgba(0,0,0,0.7));
 }
 /* SEAGULL */
 .seagull-bg {
@@ -87,18 +93,26 @@ body {
 }
 
 /*  BUTTERFLY */
-.butterfly-effect {
+.butterfly-wrap {
     width: 90%;
     height: 90%;
+    border-radius: 150px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
 
-    object-fit: cover;
-
-    border-radius: 70px 0 70px 0;
+.butterfly-effect {
+    width: 95%;
+    height: 95%;
+    object-fit: contain;
 
     filter: 
         hue-rotate(170deg)
-        saturate(1.4)
-        brightness(1.2);
+        brightness(1.2)
+        saturate(1.2);
 }
 
 /* THEATER */
