@@ -68,10 +68,9 @@ body {
 /* DINO */
 .dino-effect {
     width: 180px;
-    filter: hue-rotate(200deg) saturate(2.2) brightness(0.85) contrast(1.15)
+    filter: hue-rotate(140deg) saturate(1.6) brightness(0.9) contrast(1.1)
             drop-shadow(3px 3px 6px rgba(0,0,0,0.7));
 }
-
 /* SEAGULL */
 .seagull-bg {
     background: linear-gradient(to bottom, #7395ef, #ffffff);
@@ -92,7 +91,7 @@ body {
     width: 90%;
     height: 90%;
 
-    object-fit: contain; /* щоб не обрізало */
+    object-fit: cover;
 
     border-radius: 70px 0 70px 0;
 
