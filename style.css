@@ -97,18 +97,13 @@ body {
     width: 90%;
     height: 90%;
 
-    border-top-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
-
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 
     background: white;
+
+    clip-path: path("M 0 60 Q 0 0 60 0 L 100% 0 L 100% calc(100% - 60px) Q 100% 100% calc(100% - 60px) 100% L 0 100% Z");
 }
 
 .butterfly-effect {
